@@ -1,0 +1,7 @@
+name: jnr-higgs-zero-certificates
+channels:
+  - conda-forge
+dependencies:
+  - python=3.13.5
+  - numpy=2.3.5
+  - sympy=1.14.0

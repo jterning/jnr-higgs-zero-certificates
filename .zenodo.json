@@ -1,0 +1,18 @@
+{
+  "title": "JNR Higgs-zero interval certificates",
+  "description": "Rigorous multivariate Bernstein interval certificates for the effective near-aligned charge bounds used in the charge-two dyonic-instanton Higgs-zero analysis.",
+  "creators": [
+    {
+      "name": "Terning, John"
+    }
+  ],
+  "license": "bsd-3-clause",
+  "upload_type": "software",
+  "keywords": [
+    "dyonic instanton",
+    "JNR",
+    "Bernstein polynomial",
+    "interval certificate",
+    "computer-assisted proof"
+  ]
+}

@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use these interval certificates, please cite this software release and the associated paper."
+title: "JNR Higgs-zero interval certificates"
+type: software
+authors:
+  - family-names: "Terning"
+    given-names: "John"
+version: "1.0.0"
+date-released: "2026-08-22"
+license: "BSD-3-Clause"
+abstract: >-
+  Rigorous multivariate Bernstein interval certificates for effective
+  near-aligned charge bounds in the charge-two JNR dyonic-instanton
+  Higgs-zero problem. The archived release certifies the delta=0.02 and
+  delta=0.05 cases used in the associated paper.
+keywords:
+  - dyonic instanton
+  - JNR
+  - Bernstein polynomial
+  - interval certificate
+  - computer-assisted proof
