@@ -8,6 +8,8 @@ authors:
 version: "1.0.0"
 date-released: "2026-08-22"
 license: "BSD-3-Clause"
+repository-code: "https://github.com/jterning/jnr-higgs-zero-certificates"
+url: "https://github.com/jterning/jnr-higgs-zero-certificates"
 abstract: >-
   Rigorous multivariate Bernstein interval certificates for effective
   near-aligned charge bounds in the charge-two JNR dyonic-instanton
