@@ -4,6 +4,12 @@ This repository contains the rigorous computer-assisted interval certificates
 used to make the near-aligned charge bounds effective in the charge-two JNR
 dyonic-instanton Higgs-zero analysis.
 
+The theorem-level finite-tilt verifier is
+`jnr_near_aligned_rational_interval_certificate_v3.py`. It constructs the
+initial Bernstein data exactly over the rationals and permits every pruning
+step only after a rigorous exact-rational interval sign test. The earlier
+certificate engine in `src/` is retained as an independent cross-check.
+
 The certificates use the denominator-free reduced CKLL node kernel in the
 variables `(p,a,b,y,u,v)` and multivariate Bernstein bounds on a deliberately
 enlarged compact box. The two frozen results are:
@@ -13,7 +19,7 @@ enlarged compact box. The two frozen results are:
 | 0.02 | 24/25 = 0.96 | `CERTIFIED_EMPTY` | 7/25 = 0.28 | 103/7350 ≈ 0.0140136 |
 | 0.05 | 9/10 = 0.90 | `CERTIFIED_EMPTY` | sqrt(19)/10 ≈ 0.435890 | 43/1140 ≈ 0.0377193 |
 
-These imply, on the regular JNR chart, the effective sufficient conditions
+These imply, on the regular JNR stratum, the effective sufficient conditions
 
 ```text
 j_max/Q_E >= 1.686666...,  j_min/Q_E > 0.9859863946
@@ -30,6 +36,16 @@ respectively.
 ## Repository layout
 
 ```text
+jnr_near_aligned_rational_interval_certificate_v3.py
+    authoritative theorem-level verifier
+certificates/jnr_rational_interval_v3_delta002.json
+certificates/jnr_rational_interval_v3_delta005.json
+    frozen exact-rational v3 certificates
+scripts/verify_exact_v3.py
+    reruns both v3 certificates and compares invariant metadata
+docs/FINITE_TILT_EXACT_INTERVAL.md
+    exact-rational arithmetic and certificate specification
+
 src/
   interval_certificate.py   certificate engine and exact polynomial definitions
   polynomial_kernel.py      standalone symbolic kernel for inspection/reuse
@@ -73,41 +89,52 @@ or with an existing Python 3.13 environment:
 python -m pip install -r requirements.txt
 ```
 
-## One-command verification
+## Verification
 
-From the repository root:
+The canonical theorem-level verification is
 
 ```bash
-python scripts/verify_all.py
+make verify
 ```
 
-This recomputes both interval trees and exits with status 0 only if both runs
-return `CERTIFIED_EMPTY` and their invariant certificate metadata match the
-frozen JSON files. Timing fields are intentionally ignored. On the archived
-machine the two subdivisions take tens of seconds in total.
+This reruns both exact-rational v3 interval trees and exits with status 0 only
+if both return `CERTIFIED_EMPTY` and their machine-independent certificate
+metadata agree with the frozen JSON files. Wall-clock timing is ignored.
 
-Individual runs are also available:
+The earlier independent implementation is retained and can be checked with
 
 ```bash
-python scripts/run_delta_002.py
-python scripts/run_delta_005.py
+make legacy-verify
+```
+
+Individual legacy runs remain available with
+
+```bash
+make delta002
+make delta005
 ```
 
 ## Arithmetic assurance
 
-Initial Bernstein coefficients are constructed exactly as Python `Fraction`
-objects. Each is rounded once to binary64 and its exact conversion error is
-computed. Every de Casteljau subdivision propagates a conservative absolute
-roundoff envelope using `2^-51`, four times the standard binary64 unit
-roundoff. A box is discarded only when every exact Bernstein coefficient of a
-relevant polynomial is separated from zero by more than that envelope.
+Initial Bernstein coefficients in the v3 verifier are constructed exactly as
+Python `Fraction` objects. Numerical coefficient centers used during
+subdivision are interpreted as their exact binary64 dyadic rationals, and each
+carries an exact rational enclosure radius. De Casteljau subdivision
+propagates a conservative rational roundoff bound. A box is discarded only
+when an exact rational comparison proves that the relevant interval is
+strictly separated from zero.
 
-For the archived runs, the smallest strict pruning margins are about
-`5.38e-6` and `2.51e-5`, while the largest propagated coefficient-error bounds
-are about `3.30e-10` and `3.02e-10`, respectively.
+For the `delta=1/50` certificate, the smallest certified rational sign margin
+is about `5.37778e-6`, while the largest exact rational error radius encountered
+is about `4.36664e-10`. For `delta=1/20`, the corresponding values are about
+`2.51022e-5` and `4.00284e-10`.
 
-See `docs/certificate_method.md` and the frozen JSON files for the full
-certificate metadata.
+These decimal values are diagnostics only; the pruning decisions themselves
+use the exact rational interval endpoints.
+
+See `docs/FINITE_TILT_EXACT_INTERVAL.md` and the frozen v3 JSON files for the
+full theorem-level arithmetic specification and certificate metadata.
+`docs/certificate_method.md` documents the earlier independent implementation.
 
 ## Citation and archival release
 

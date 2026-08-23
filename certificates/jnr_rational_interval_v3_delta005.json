@@ -1,0 +1,237 @@
+{
+  "X_delta": "163/43",
+  "arithmetic_note": "Initial tensor-product Bernstein coefficients are exact fractions. Binary64 values are only centers. Each center is interpreted exactly as a dyadic Fraction, with an exact rational radius. Under a half-split along axis i the rigorous uniform radius is E_child = E_parent + d_i*2^-51*B, with B an exact power-of-two bound on all stored centers; the bound invariant is checked at every split. Every pruning sign is decided by an exact Fraction comparison of the interval endpoint with zero. No floating-point inequality or approximate error-envelope comparison enters the proof.",
+  "bernstein_note": "The exact polynomial range on a box lies in the convex hull of its exact Bernstein coefficients; each such coefficient lies in the exact rational interval centered on the stored dyadic value.",
+  "build": {
+    "Cap": {
+      "center_abs_bound": "16",
+      "degree": [
+        2,
+        2,
+        2,
+        0,
+        0,
+        0
+      ],
+      "exact_initial_max_abs": "274/43",
+      "exact_initial_to_binary64_radius": "9/24206847997116416",
+      "nonzero_exact_bernstein_coefficients": 27,
+      "seconds": 0.0015821456909179688,
+      "shape": [
+        3,
+        3,
+        3,
+        1,
+        1,
+        1
+      ]
+    },
+    "Cu": {
+      "center_abs_bound": "2048",
+      "degree": [
+        4,
+        4,
+        4,
+        3,
+        6,
+        6
+      ],
+      "exact_initial_max_abs": "3465/4",
+      "exact_initial_to_binary64_radius": "1/19791209299968",
+      "nonzero_exact_bernstein_coefficients": 23696,
+      "seconds": 0.5402581691741943,
+      "shape": [
+        5,
+        5,
+        5,
+        4,
+        7,
+        7
+      ]
+    },
+    "Cv": {
+      "center_abs_bound": "2048",
+      "degree": [
+        4,
+        4,
+        4,
+        3,
+        6,
+        6
+      ],
+      "exact_initial_max_abs": "660",
+      "exact_initial_to_binary64_radius": "1/26388279066624",
+      "nonzero_exact_bernstein_coefficients": 23716,
+      "seconds": 0.5355298519134521,
+      "shape": [
+        5,
+        5,
+        5,
+        4,
+        7,
+        7
+      ]
+    },
+    "Ktilde": {
+      "center_abs_bound": "4096",
+      "degree": [
+        6,
+        6,
+        6,
+        4,
+        8,
+        8
+      ],
+      "exact_initial_max_abs": "12357/8",
+      "exact_initial_to_binary64_radius": "7/65970697666560",
+      "nonzero_exact_bernstein_coefficients": 138719,
+      "seconds": 3.9668452739715576,
+      "shape": [
+        7,
+        7,
+        7,
+        5,
+        9,
+        9
+      ]
+    },
+    "Nh": {
+      "center_abs_bound": "512",
+      "degree": [
+        4,
+        4,
+        4,
+        3,
+        6,
+        6
+      ],
+      "exact_initial_max_abs": "38379/200",
+      "exact_initial_to_binary64_radius": "3/219902325555200",
+      "nonzero_exact_bernstein_coefficients": 24460,
+      "seconds": 0.5972249507904053,
+      "shape": [
+        5,
+        5,
+        5,
+        4,
+        7,
+        7
+      ]
+    }
+  },
+  "deepest_depth_vector": [
+    6,
+    6,
+    6,
+    6,
+    6,
+    5
+  ],
+  "delta": "1/20",
+  "epsilon_delta_lower_bound": "43/1140",
+  "h0": "9/10",
+  "hashes": {
+    "Cap": "df571b96c940f1e5d8d0d9efe8f5426912ca014ca6c962fa3eb0952a6a505a26",
+    "Cu": "9008c0182f288cbdca036c9bda9ae4314eea0d6e26e1fc22f0f30945ea4dd347",
+    "Cv": "2b192bb707bc4a22bbfef9e1b54812a0c6bbcf7d1d23e253fcab8df6821498eb",
+    "Ktilde": "8d193a8df0e2e479b4cabfeda4e07828750f3c250eaf549ed0667f94149b80e5",
+    "Nh": "ea415bd3174c16ce3f7216daa4e33ff82a7d3e001b19627069067e871b15bd85"
+  },
+  "max_axis_depths": {
+    "a": 6,
+    "b": 6,
+    "p": 6,
+    "u": 6,
+    "v": 5,
+    "y": 6
+  },
+  "max_exact_rational_error_radius_seen": {
+    "Cap": {
+      "decimal": 2.5616718049118497e-13,
+      "exact": "6201/24206847997116416"
+    },
+    "Cu": {
+      "decimal": 1.4193170096000862e-10,
+      "exact": "2809/19791209299968"
+    },
+    "Cv": {
+      "decimal": 1.364621008785131e-10,
+      "exact": "3601/26388279066624"
+    },
+    "Ktilde": {
+      "decimal": 4.0028377649529527e-10,
+      "exact": "26407/65970697666560"
+    },
+    "Nh": {
+      "decimal": 3.5483935789670796e-11,
+      "exact": "7803/219902325555200"
+    }
+  },
+  "min_certified_rational_interval_sign_margin": {
+    "Cap": {
+      "decimal": 0.0011142908138251583,
+      "exact": "220966652762921011/198302498792377679872"
+    },
+    "Cu": {
+      "decimal": 2.5510714244274064e-05,
+      "exact": "132353329725467/5188146770730811392"
+    },
+    "Cv": {
+      "decimal": 0.00014162369457905907,
+      "exact": "7653797017597/54043195528445952"
+    },
+    "Ktilde": {
+      "decimal": 0.0001728912792562763,
+      "exact": "5979902214406459/34587645138205409280"
+    },
+    "Nh": {
+      "decimal": 2.510222654505033e-05,
+      "exact": "361761209966267/14411518807585587200"
+    }
+  },
+  "outer_domain": {
+    "a": [
+      "-1",
+      "1"
+    ],
+    "b": [
+      "-1",
+      "1"
+    ],
+    "p": [
+      "0",
+      "1/2"
+    ],
+    "u": [
+      "-1",
+      "1"
+    ],
+    "v": [
+      "-1",
+      "1"
+    ],
+    "y": [
+      "0",
+      "1"
+    ]
+  },
+  "polynomial_system": {
+    "Cap": "Qs - X_delta Ds <= 0",
+    "Cu": "G_y H_u - G_u H_y = 0",
+    "Cv": "G_y H_v - G_v H_y = 0",
+    "Ktilde": "M Ds H - Qs G^2 = 0",
+    "Nh": "H Qs - h0^2 M Ds L^2 >= 0"
+  },
+  "prune_counts": {
+    "Cap": 2268,
+    "Cu": 3776,
+    "Cv": 2404,
+    "Ktilde": 260,
+    "Nh": 6372
+  },
+  "rho_delta_squared_lower_bound": "19/100",
+  "statement": "No simultaneous solution of Ktilde=Cu=Cv=0, Cap<=0 and Nh>=0 exists on the outer box. Therefore no physical ordinary node with Xi_J<=X_delta and h>=h0 exists.",
+  "status": "CERTIFIED_EMPTY",
+  "subdivision_seconds": 19.860440969467163,
+  "visited_boxes": 30159
+}
