@@ -1,0 +1,227 @@
+{
+  "X_delta": "403/103",
+  "X_delta_float": 3.912621359223301,
+  "arithmetic_note": "Initial Bernstein coefficients are exact Fractions. Binary64 values are dyadic centers only. Their exact conversion errors and every propagated de Casteljau error radius are rational. At pruning, the selected floating minimum/maximum center is converted with Fraction.from_float and compared with the exact rational radius, so every sign decision is exact in Q. The child radius is E_parent + degree_axis * 2^-51 * Mbound.",
+  "bernstein_note": "The polynomial range on a box lies in the convex hull of its exact Bernstein coefficients.",
+  "build": {
+    "Cap": {
+      "Mbound": "8712060444209431/562949953421312",
+      "Mbound_float": 15.475728155339807,
+      "degree": [
+        2,
+        2,
+        2,
+        0,
+        0,
+        0
+      ],
+      "max_initial_exact_to_float_error": "47/115967690404790272",
+      "max_initial_exact_to_float_error_float": 4.052852983097659e-16,
+      "roundoff_bound_initial": "47/115967690404790272",
+      "roundoff_bound_initial_float": 4.052852983097659e-16,
+      "seconds": 0.002066373825073242,
+      "shape": [
+        3,
+        3,
+        3,
+        1,
+        1,
+        1
+      ]
+    },
+    "Cu": {
+      "Mbound": "7628411673509889/4398046511104",
+      "Mbound_float": 1734.5000000000002,
+      "degree": [
+        4,
+        4,
+        4,
+        3,
+        6,
+        6
+      ],
+      "max_initial_exact_to_float_error": "1/19791209299968",
+      "max_initial_exact_to_float_error_float": 5.0527483431829344e-14,
+      "roundoff_bound_initial": "1/19791209299968",
+      "roundoff_bound_initial_float": 5.0527483431829344e-14,
+      "seconds": 0.6072709560394287,
+      "shape": [
+        5,
+        5,
+        5,
+        4,
+        7,
+        7
+      ]
+    },
+    "Cv": {
+      "Mbound": "5814217487679489/4398046511104",
+      "Mbound_float": 1322.0000000000002,
+      "degree": [
+        4,
+        4,
+        4,
+        3,
+        6,
+        6
+      ],
+      "max_initial_exact_to_float_error": "1/26388279066624",
+      "max_initial_exact_to_float_error_float": 3.789561257387201e-14,
+      "roundoff_bound_initial": "1/26388279066624",
+      "roundoff_bound_initial_float": 3.789561257387201e-14,
+      "seconds": 0.6979897022247314,
+      "shape": [
+        5,
+        5,
+        5,
+        4,
+        7,
+        7
+      ]
+    },
+    "Ktilde": {
+      "Mbound": "6797730638725121/2199023255552",
+      "Mbound_float": 3091.2500000000005,
+      "degree": [
+        6,
+        6,
+        6,
+        4,
+        8,
+        8
+      ],
+      "max_initial_exact_to_float_error": "7/65970697666560",
+      "max_initial_exact_to_float_error_float": 1.0610771520684163e-13,
+      "roundoff_bound_initial": "7/65970697666560",
+      "roundoff_bound_initial_float": 1.0610771520684163e-13,
+      "seconds": 5.38489842414856,
+      "shape": [
+        7,
+        7,
+        7,
+        5,
+        9,
+        9
+      ]
+    },
+    "Nh": {
+      "Mbound": "6804559045738261/17592186044416",
+      "Mbound_float": 386.79440000000005,
+      "degree": [
+        4,
+        4,
+        4,
+        3,
+        6,
+        6
+      ],
+      "max_initial_exact_to_float_error": "269/21990232555520000",
+      "max_initial_exact_to_float_error_float": 1.2232703738845885e-14,
+      "roundoff_bound_initial": "269/21990232555520000",
+      "roundoff_bound_initial_float": 1.2232703738845885e-14,
+      "seconds": 0.6966042518615723,
+      "shape": [
+        5,
+        5,
+        5,
+        4,
+        7,
+        7
+      ]
+    }
+  },
+  "deepest_depth_vector": [
+    7,
+    7,
+    7,
+    6,
+    6,
+    6
+  ],
+  "delta": "1/50",
+  "delta_float": 0.02,
+  "epsilon_delta_lower_bound": 0.01401360544217687,
+  "h0": "24/25",
+  "h0_float": 0.96,
+  "hashes": {
+    "Cap": "32c95b12ec63c6853cf9ffc3a0d34883c744bf21534de49b5bfbfe487416e971",
+    "Cu": "9008c0182f288cbdca036c9bda9ae4314eea0d6e26e1fc22f0f30945ea4dd347",
+    "Cv": "2b192bb707bc4a22bbfef9e1b54812a0c6bbcf7d1d23e253fcab8df6821498eb",
+    "Ktilde": "8d193a8df0e2e479b4cabfeda4e07828750f3c250eaf549ed0667f94149b80e5",
+    "Nh": "61b657f684068449296046fec5ee0712a225c32d2d4cfada4b01300a1f048cc2"
+  },
+  "max_axis_depths": [
+    7,
+    7,
+    7,
+    6,
+    6,
+    6
+  ],
+  "max_coefficient_error_bound_seen": {
+    "Cap": "18870645388635800917/65284005911753814177080215076864",
+    "Cu": "5837986730048750333/44565841414273689896368472064",
+    "Cv": "1483188409311691007/14855280471424563298789490688",
+    "Ktilde": "1529981974922395873/4642275147320176030871715840",
+    "Nh": "370149331649488274803/12379400392853802748991242240000"
+  },
+  "max_coefficient_error_bound_seen_float": {
+    "Cap": 2.890546486093971e-13,
+    "Cu": 1.3099689234587056e-10,
+    "Cv": 9.984250463427696e-11,
+    "Ktilde": 3.2957589250296836e-10,
+    "Nh": 2.9900424891593504e-11
+  },
+  "min_certified_Bernstein_sign_margin": {
+    "Cap": "39860702110846622464716307505/65284005911753814177080215076864",
+    "Cu": "2273813895886488410783015/89131682828547379792736944128",
+    "Cv": "4207720299584498803146473/29710560942849126597578981376",
+    "Ktilde": "1564920389777598284037859/9284550294640352061743431680",
+    "Nh": "133147525171775560170257269/24758800785707605497982484480000"
+  },
+  "min_certified_Bernstein_sign_margin_float": {
+    "Cap": 0.000610573777668108,
+    "Cu": 2.5510725521253415e-05,
+    "Cv": 0.00014162372456307434,
+    "Ktilde": 0.00016855101648606205,
+    "Nh": 5.377785714429149e-06
+  },
+  "outer_domain": {
+    "a": [
+      "-1",
+      "1"
+    ],
+    "b": [
+      "-1",
+      "1"
+    ],
+    "p": [
+      "0",
+      "1/2"
+    ],
+    "u": [
+      "-1",
+      "1"
+    ],
+    "v": [
+      "-1",
+      "1"
+    ],
+    "y": [
+      "0",
+      "1"
+    ]
+  },
+  "prune_counts": {
+    "Cap": 2956,
+    "Cu": 4584,
+    "Cv": 3148,
+    "Ktilde": 352,
+    "Nh": 7752
+  },
+  "rho_delta_lower_bound": 0.28,
+  "statement": "No simultaneous solution of Ktilde=Cu=Cv=0, Cap<=0 and Nh>=0 exists on the outer box. Therefore no physical ordinary node with Xi_J<=X_delta and h>=h0 exists.",
+  "status": "CERTIFIED_EMPTY",
+  "subdivision_seconds": 19.391181468963623,
+  "visited_boxes": 37583
+}

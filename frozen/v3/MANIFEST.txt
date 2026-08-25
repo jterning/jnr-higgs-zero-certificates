@@ -1,0 +1,13 @@
+README.md
+PROVENANCE.md
+RUNTIME.md
+requirements.txt
+environment.yml
+src/jnr_near_aligned_rational_interval_certificate_v3.py
+scripts/_verify_case.py
+scripts/run_delta_002.py
+scripts/run_delta_005.py
+scripts/verify_exact_v3.py
+certificates/delta_002/result.json
+certificates/delta_005/result.json
+SHA256SUMS
