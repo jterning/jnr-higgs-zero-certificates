@@ -1,0 +1,10 @@
+./PROVENANCE.md
+./README.md
+./RUNTIME.md
+./environment.yml
+./outputs/isosceles_sturm.json
+./outputs/sharp_nodal_bound.json
+./requirements.txt
+./verify_all.py
+./verify_isosceles_sturm.py
+./verify_sharp_nodal_bound.py

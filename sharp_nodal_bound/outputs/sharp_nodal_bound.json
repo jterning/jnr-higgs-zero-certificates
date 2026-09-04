@@ -1,0 +1,21 @@
+{
+  "checks": {
+    "E4_branch_initial_derivative": "-276/35 + 8*sqrt(5)/5",
+    "H4_positive_transform": "48*r**4 + 716*r**3 + 2884*r**2 + 5772*r + 3781",
+    "Theta4_Bernstein_coefficients": [
+      "-15",
+      "-95/4",
+      "-46/3",
+      "-8",
+      "-18"
+    ],
+    "b_positive_gap_factorization": "(varpi - 1)*(varpi + 1)*(5*x - 6)",
+    "boundary_positive_test": "-123/512 + 27*sqrt(65)/512",
+    "main_elimination_identity": true,
+    "reconstructed_F_nod_from_physical_JNR_identity": true,
+    "resultant_E4_Delta41": "256*x**2*(x - 1)**8*(225*x**4 - 2860*x**3 + 8254*x**2 - 9352*x + 3781)",
+    "resultant_P_Q": "-y**4*(y - 1)*(5*y**2 - 1)*(2*y**4 - 73*y**3 + 103*y**2 - 35*y - 15)"
+  },
+  "status": "PASS",
+  "sympy_version": "1.14.0"
+}

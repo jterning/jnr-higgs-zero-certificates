@@ -147,3 +147,16 @@ release if desired.
 ## License
 
 BSD-3-Clause. See `LICENSE`.
+
+## Sharp nodal-bound symbolic verification
+
+Exact symbolic checks supporting the sharp nodal bound
+\(\Xi_J \ge 4\) are provided in `sharp_nodal_bound/`.
+
+Run
+
+    cd sharp_nodal_bound
+    python verify_all.py
+
+to reproduce the nodal elimination identity, resultant factorizations,
+Sturm checks, and exact Bernstein sign checks used in the proof.
