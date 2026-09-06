@@ -37,15 +37,21 @@ respectively.
 
 ```text
 jnr_near_aligned_rational_interval_certificate_v3.py
-    authoritative theorem-level verifier
+    authoritative theorem-level finite-tilt verifier
 certificates/jnr_rational_interval_v3_delta002.json
 certificates/jnr_rational_interval_v3_delta005.json
     frozen exact-rational v3 certificates
+scripts/verify_certificates.py
+    stable public replay entry point for all paper-level certificates
 scripts/verify_exact_v3.py
-    reruns both v3 certificates and compares invariant metadata
+    internal finite-tilt replay; reruns both v3 certificates and compares
+    invariant metadata
 docs/FINITE_TILT_EXACT_INTERVAL.md
     exact-rational arithmetic and certificate specification
-
+frozen/v3/environment.yml
+    immutable environment specification for the paper snapshot
+sharp_nodal_bound/
+    exact symbolic checks supporting the sharp nodal bound
 src/
   interval_certificate.py   certificate engine and exact polynomial definitions
   polynomial_kernel.py      standalone symbolic kernel for inspection/reuse
@@ -58,7 +64,7 @@ scripts/
   verify_all.py             recompute both and compare with frozen results
 docs/
   certificate_method.md     method and arithmetic-assurance notes
-environment.yml             exact Conda environment used for the archived run
+environment.yml             archived development Conda environment
 requirements.txt            pip dependency pins
 CITATION.cff                 citation metadata
 .zenodo.json                 Zenodo release metadata
@@ -68,7 +74,7 @@ SHA256SUMS                   hashes of archived source and certificate files
 
 ## Environment
 
-The archived run used:
+The paper snapshot uses:
 
 ```text
 Python 3.13.5
@@ -76,14 +82,16 @@ NumPy  2.3.5
 SymPy  1.14.0
 ```
 
-With Conda/Mamba:
+The immutable Conda/Mamba specification for that snapshot is
+`frozen/v3/environment.yml`:
 
 ```bash
-mamba env create -f environment.yml
-mamba activate jnr-higgs-zero-certificates
+mamba env create -f frozen/v3/environment.yml
+mamba activate jnr-higgs-zero-certificates-v3
 ```
 
-or with an existing Python 3.13 environment:
+The top-level `environment.yml` records the archived development environment.
+Alternatively, with an existing Python 3.13 environment:
 
 ```bash
 python -m pip install -r requirements.txt
@@ -91,17 +99,35 @@ python -m pip install -r requirements.txt
 
 ## Verification
 
-The canonical theorem-level verification is
+The stable public replay command is
+
+```bash
+python scripts/verify_certificates.py
+```
+
+It replays both the exact symbolic sharp-nodal checks and the exact-rational
+finite-tilt certificates. The Make target is an alias for the same public
+interface:
 
 ```bash
 make verify
 ```
 
-This reruns both exact-rational v3 interval trees and exits with status 0 only
-if both return `CERTIFIED_EMPTY` and their machine-independent certificate
-metadata agree with the frozen JSON files. Wall-clock timing is ignored.
+Individual paper-level certificate families can be replayed through the same
+stable entry point:
 
-The earlier independent implementation is retained and can be checked with
+```bash
+python scripts/verify_certificates.py nodal
+python scripts/verify_certificates.py finite-tilt
+```
+
+The finite-tilt replay reruns both exact-rational v3 interval trees and exits
+with status 0 only if both return `CERTIFIED_EMPTY` and their
+machine-independent certificate metadata agree with the frozen JSON files.
+Wall-clock timing is ignored.
+
+The earlier independent finite-tilt implementation is retained and can be
+checked with
 
 ```bash
 make legacy-verify
@@ -136,6 +162,20 @@ See `docs/FINITE_TILT_EXACT_INTERVAL.md` and the frozen v3 JSON files for the
 full theorem-level arithmetic specification and certificate metadata.
 `docs/certificate_method.md` documents the earlier independent implementation.
 
+## Sharp nodal-bound symbolic verification
+
+Exact symbolic checks supporting the sharp nodal bound
+\(\Xi_J \ge 4\) are provided in `sharp_nodal_bound/`.
+
+The stable replay command is
+
+```bash
+python scripts/verify_certificates.py nodal
+```
+
+It reproduces the nodal elimination identity, resultant factorizations,
+Sturm checks, and exact Bernstein sign checks used in the proof.
+
 ## Citation and archival release
 
 For a public release, create a tagged GitHub release (for example
@@ -147,16 +187,3 @@ release if desired.
 ## License
 
 BSD-3-Clause. See `LICENSE`.
-
-## Sharp nodal-bound symbolic verification
-
-Exact symbolic checks supporting the sharp nodal bound
-\(\Xi_J \ge 4\) are provided in `sharp_nodal_bound/`.
-
-Run
-
-    cd sharp_nodal_bound
-    python verify_all.py
-
-to reproduce the nodal elimination identity, resultant factorizations,
-Sturm checks, and exact Bernstein sign checks used in the proof.
